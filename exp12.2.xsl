@@ -5,18 +5,27 @@
 <xsl:template match="/">
 
 <html>
-<body>
+<body style="background-color: lightblue; font-family: Arial;">
 
-<h2><xsl:value-of select="books/heading"/></h2>
+    <!-- Heading -->
+    <h2 style="color: darkblue;">
+        <xsl:value-of select="books/heading"/>
+    </h2>
 
-<xsl:for-each select="books/book">
-    <p><xsl:value-of select="title"/></p>
-    <p><xsl:value-of select="author"/></p>
-    <p><xsl:value-of select="publisher"/></p>
-    <p><xsl:value-of select="edition"/></p>
-    <p><xsl:value-of select="price"/></p>
-    <hr/>
-</xsl:for-each>
+    <!-- Loop for each book -->
+    <xsl:for-each select="books/book">
+
+        <div style="background-color: white; padding:10px; margin:10px; border-radius:10px;">
+            
+            <p><b>Title:</b> <xsl:value-of select="title"/></p>
+            <p><b>Author:</b> <xsl:value-of select="author"/></p>
+            <p><b>Publisher:</b> <xsl:value-of select="publisher"/></p>
+            <p><b>Edition:</b> <xsl:value-of select="edition"/></p>
+            <p><b>Price:</b> <xsl:value-of select="price"/></p>
+
+        </div>
+
+    </xsl:for-each>
 
 </body>
 </html>
